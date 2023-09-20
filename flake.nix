@@ -36,6 +36,7 @@
     packages = rec {
       matlab-runtime = pkgs.callPackage ./matlab-runtime.nix {};
       spm-mcr = pkgs.callPackage ./spm-mcr.nix { inherit matlab-runtime; };
+      default = spm-mcr;
     };
   });
 }
