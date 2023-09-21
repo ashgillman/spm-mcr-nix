@@ -3,19 +3,18 @@
 This repository contains a [[https://nixos.org/manual/nix/unstable/command-ref/new-cli/nix3-flake.html#description][Nix Flake]] for building [[https://www.fil.ion.ucl.ac.uk/spm/][Statistical Parametric Mapping (SPM)]] on the [[https://au.mathworks.com/products/compiler/matlab-runtime.html][Matlab Compiler Runtime (MCR)]].
 
 * What works?
-- Batched commands, like =spm12 batch /path/to/jobfile.m=.
+- Batched commands, like =spm batch /path/to/jobfile.m=.
   - Tested:
     - ~spm.spatial.coreg.estimate~
+- GUI loads (untested)
 
 * What doesn't work?
-- Anything requiring GUI.
-  - Cause seems to be that Java hasn't been linked properly.
 - Probably everything else.
 
 * Versions
 Currently supports:
-- MCR version :: R2019b (9.7.9)
-- SPM version :: 12 (7771)
+- SPM 12 (7771) w/ MCR R2019b (9.7.9)
+- SPM 8 (6313) w/ MCR R2019a (9.6.9)
 
 * Other projects
 If this repository doesn't solve your problems, you might like to check out:

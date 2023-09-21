@@ -34,9 +34,14 @@
 
   in {
     packages = rec {
-      matlab-runtime = pkgs.callPackage ./matlab-runtime.nix {};
-      spm-mcr = pkgs.callPackage ./spm-mcr.nix { inherit matlab-runtime; };
-      default = spm-mcr;
+      mcr-R2019a = pkgs.callPackage ./mcr/2019a.nix {};
+      mcr-R2019b = pkgs.callPackage ./mcr/2019b.nix {};
+      mcr = mcr-R2019b;
+
+      spm8 = pkgs.callPackage ./spm/spm8.nix { matlab-runtime = mcr-R2019a; };
+      spm12 = pkgs.callPackage ./spm/spm12.nix { matlab-runtime = mcr-R2019b; };
+      spm = spm12;
+      default = spm;
     };
   });
 }
