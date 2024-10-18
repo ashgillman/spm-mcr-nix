@@ -4,7 +4,7 @@
   inputs = {
     # use the new nixpkgs to build the flake
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/22.11";
+      url = "github:NixOS/nixpkgs/23.05";
     };
     utils.url = "github:numtide/flake-utils";
   };
