@@ -61,7 +61,6 @@ let
     zlib
 
     cacert
-    alsa-lib # libasound2
     atk
     glib
     glibc
@@ -86,6 +85,9 @@ let
     unzip
     jre
   ];
+  linux_libPath = lib.makeLibraryPath [
+    alsa-lib # libasound2
+  ]
 
 in stdenv.mkDerivation {
   pname = "matlab-runtime";
